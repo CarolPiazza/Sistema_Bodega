@@ -263,6 +263,7 @@ void cadastrarCliente(Cliente **firstCliente){
     scanf("%s", novoCliente->CPF);
 
     aux = *firstCliente;
+
     while (aux != NULL){
 
         if (strcmp(aux->CPF, novoCliente->CPF) == 0) {
@@ -290,9 +291,12 @@ void cadastrarCliente(Cliente **firstCliente){
     if (*firstCliente == NULL || novoCliente->idade <= (*firstCliente)->idade) {
         novoCliente->next = *firstCliente;
         *firstCliente = novoCliente;
+
     } else {
         aux = *firstCliente;
+
         while (aux->next != NULL && aux->next->idade < novoCliente->idade) {
+
             aux = aux->next;
         }
         novoCliente->next = aux->next;
@@ -303,12 +307,14 @@ void cadastrarCliente(Cliente **firstCliente){
 }
 
 void mostrarClientes(Cliente *firstCliente) {
+
     if (firstCliente == NULL) {
         printf("Nenhum cliente cadastrado.\n");
         return;
     }
 
     Cliente *aux = firstCliente;
+    
     while (aux != NULL){
 
         printf("\nCódigo: %d\nNome: %s\nCPF: %s\nIdade: %d\nFiado: %s\n", aux->codigo, aux->nome, aux->CPF, aux->idade, aux->fiado ? "Sim" : "Não");

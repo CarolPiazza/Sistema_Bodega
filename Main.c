@@ -12,8 +12,8 @@
 int main(){
 
     Empresa empresa = {"Bodega do Maneca", "12.345.678/0001-90"};
-    Bebida* firstBebida = NULL;
-    Cliente* firstCliente = NULL;
+    Bebida *firstBebida = NULL;
+    Cliente *firstCliente = NULL;
     int opcao;
 
     printf("\n**************************************************\n");
@@ -62,6 +62,7 @@ int main(){
                 sairSistema(&firstBebida, &firstCliente);
                 break;
         }
+        
     } while (opcao != 7);
 
     return 0;
