@@ -12,12 +12,12 @@ typedef struct{
 typedef struct Bebida{
 
     int codigo;
-    char nome[50];
+    char nome[90];
     int conteudo_ml;
     float preco_venda;
     int qtd_estoque;
     float teor_alcoolico;
-    struct Bebida* next;
+    struct Bebida *next;
 }Bebida;
 
 typedef struct Cliente{
@@ -27,7 +27,7 @@ typedef struct Cliente{
     char CPF[12];
     int idade;
     int fiado;
-    struct Cliente* next;
+    struct Cliente *next;
 }Cliente;
 
 void mostrarMenu(Empresa empresa, Bebida *firstBebida, Cliente *firstCliente);
