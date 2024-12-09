@@ -30,7 +30,6 @@ typedef struct Cliente{
     struct Cliente *next;
 }Cliente;
 
-void mostrarMenu(Empresa empresa, Bebida *firstBebida, Cliente *firstCliente);
 void cadastrarBebida(Bebida **firstBebida);
 void mostrarBebidas(Bebida *firstBebida);
 void comprarBebida(Bebida **firstBebida);

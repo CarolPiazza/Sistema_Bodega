@@ -130,7 +130,7 @@ void comprarBebida(Bebida **firstBebida){
 void venderBebida(Bebida **firstBebida, Cliente *firstCliente){
 
     int codigo, qtd;
-    char CPF[15];
+    char CPF[12];
 
     printf("Digite o CPF do cliente: ");
     scanf("%s", CPF);
