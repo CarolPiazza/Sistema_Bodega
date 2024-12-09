@@ -7,7 +7,7 @@
 
 void cadastrarBebida(Bebida **firstBebida){
 
-    Bebida* novaBebida = (Bebida*)malloc(sizeof(Bebida));
+    Bebida *novaBebida = (Bebida*)malloc(sizeof(Bebida));
 
     printf("Digite o código da bebida: ");
     scanf("%d", &novaBebida->codigo);
@@ -20,7 +20,7 @@ void cadastrarBebida(Bebida **firstBebida){
         return;
     }
 
-    Bebida* aux = *firstBebida;
+    Bebida *aux = *firstBebida;
 
     while (aux != NULL){
 
@@ -95,11 +95,13 @@ void comprarBebida(Bebida **firstBebida){
     printf("Digite o código da bebida: ");
     scanf("%d", &codigo);
 
-    Bebida* aux = *firstBebida;
+    Bebida *aux = *firstBebida;
 
     while (aux != NULL){
 
-        if (aux->codigo == codigo) break;
+        if (aux->codigo == codigo) 
+        break;
+
         aux = aux->next;
     }
 
@@ -135,7 +137,7 @@ void venderBebida(Bebida **firstBebida, Cliente *firstCliente){
 
     Cliente* cliente = firstCliente;
 
-    while (cliente != NULL) {
+    while (cliente != NULL){
 
         if (strcmp(cliente->CPF, CPF) == 0) 
         break;
@@ -153,8 +155,8 @@ void venderBebida(Bebida **firstBebida, Cliente *firstCliente){
     printf("Digite o código da bebida: ");
     scanf("%d", &codigo);
 
-    Bebida* aux = *firstBebida;
-    Bebida* prev = NULL;
+    Bebida *aux = *firstBebida;
+    Bebida *prev = NULL;
 
     while (aux != NULL){
 
@@ -224,7 +226,7 @@ void mostrarBebidas(Bebida *firstBebida){
         return;
     }
 
-    Bebida* aux = firstBebida;
+    Bebida *aux = firstBebida;
 
     while (aux != NULL){
 
@@ -244,7 +246,7 @@ void cadastrarCliente(Cliente **firstCliente){
 
     Cliente *aux = *firstCliente;
 
-    while (aux != NULL) {
+    while (aux != NULL){
 
         if (aux->codigo == novoCliente->codigo){
 
@@ -266,7 +268,7 @@ void cadastrarCliente(Cliente **firstCliente){
 
     while (aux != NULL){
 
-        if (strcmp(aux->CPF, novoCliente->CPF) == 0) {
+        if (strcmp(aux->CPF, novoCliente->CPF) == 0){
             printf("CPF já cadastrado! Cadastro não realizado.\n");
 
             free(novoCliente);
@@ -276,8 +278,9 @@ void cadastrarCliente(Cliente **firstCliente){
         aux = aux->next;
     }
 
-    if (strlen(novoCliente->CPF) != 11) {
+    if (strlen(novoCliente->CPF) != 11){
         printf("CPF inválido!\n");
+
         free(novoCliente);
         return;
     }
@@ -288,17 +291,18 @@ void cadastrarCliente(Cliente **firstCliente){
     printf("Pode vender fiado? (1 para sim, 0 para não): ");
     scanf("%d", &novoCliente->fiado);
 
-    if (*firstCliente == NULL || novoCliente->idade <= (*firstCliente)->idade) {
+    if (*firstCliente == NULL || novoCliente->idade <= (*firstCliente)->idade){
         novoCliente->next = *firstCliente;
         *firstCliente = novoCliente;
 
     } else {
         aux = *firstCliente;
 
-        while (aux->next != NULL && aux->next->idade < novoCliente->idade) {
+        while (aux->next != NULL && aux->next->idade < novoCliente->idade){
 
             aux = aux->next;
         }
+
         novoCliente->next = aux->next;
         aux->next = novoCliente;
     }
@@ -306,9 +310,9 @@ void cadastrarCliente(Cliente **firstCliente){
     printf("Cliente cadastrado com sucesso!\n");
 }
 
-void mostrarClientes(Cliente *firstCliente) {
+void mostrarClientes(Cliente *firstCliente){
 
-    if (firstCliente == NULL) {
+    if (firstCliente == NULL){
         printf("Nenhum cliente cadastrado.\n");
         return;
     }
@@ -324,7 +328,7 @@ void mostrarClientes(Cliente *firstCliente) {
 
 void sairSistema(Bebida **firstBebida, Cliente **firstCliente){
 
-    Bebida* auxBebida;
+    Bebida *auxBebida;
     int contBebidas = 0; 
     Cliente *auxCliente;
     int contClientes = 0;

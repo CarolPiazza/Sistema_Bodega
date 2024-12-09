@@ -11,7 +11,7 @@
 
 int main(){
 
-    Empresa empresa = {"Bodega do Maneca", "12.345.678/0001-90"};
+    Empresa empresa = {"Bodega do Maneca", "11.111.111/1111-11"};
     Bebida *firstBebida = NULL;
     Cliente *firstCliente = NULL;
     int opcao;
